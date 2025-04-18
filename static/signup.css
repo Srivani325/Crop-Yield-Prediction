@@ -1,0 +1,143 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Styling */
+.contain {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 360px;
+}
+
+/* Header Styling */
+header {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.field {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Eye Icon Styling */
+.eye-icon {
+  position: relative;
+  left: 260px;
+  top: -35px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.eye-icon:hover {
+  color: #555;
+}
+
+/* Button Styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Flash Messages Styling */
+.flash {
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+.flash.success {
+  background-color: #4CAF50;
+}
+
+.flash.error {
+  background-color: #f44336;
+}
+
+/* Form Link Styling */
+.form-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+.form-link a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.form-link a:hover {
+  color: #388e3c;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .contain {
+    width: 100%;
+    padding: 20px;
+  }
+}

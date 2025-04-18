@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='history.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Prediction History</h2>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% if records %}
+    <div style="max-height: 500px; overflow-y: auto;"> <!-- Add scrolling for long data -->
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>Region</th>
+                    <th>Soil Type</th>
+                    <th>Crop</th>
+                    <th>Rainfall (mm)</th>
+                    <th>Temperature (°C)</th>
+                    <th>Predicted Yield (units/hectare)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.region }}</td>
+                    <td>{{ record.soil }}</td>
+                    <td>{{ record.crop }}</td>
+                    <td>{{ record.rainfall }}</td>
+                    <td>{{ record.temperature }}</td>
+                    <td>{{ record.prediction }}</td>
+                    <td>{{ record.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p class="text-muted">No history available. Try making a prediction!</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
+
+
+

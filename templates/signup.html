@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"  href="{{ url_for('static', filename='signup.css') }}" />
+
+  <title>SignUp Form</title>
+</head>
+<body>
+     <section class="contain">
+          <div class="form login">
+                <div class="form-content">
+                     <header>Sign Up</header>
+                     <p>Create a new account</p>
+                     {% with messages = get_flashed_messages(with_categories=true) %}
+                     {% if messages %}
+                       {% for category, message in messages %}
+                         <div class="flash {{ category }}">{{ message }}</div>
+                       {% endfor %}
+                     {% endif %}
+                   {% endwith %}
+                        <form action="{{url_for('signup')}}" method="POST">
+                            <div class="field input-field">
+                                <label>Username</label>
+                                <input type="text" placeholder="Name" name="username" class="input" required />
+                            </div>
+                              <div class="field input-field">
+                                   <label>Email</label>
+                                   <input type="email" placeholder="Email" name="email" class="input" required />
+                              </div>
+
+                              <div class="field input-field">
+                                <label>Password</label>
+                                    <input type="password" placeholder="Password" name="password" class="password" required />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-slash eye-icon" viewBox="0 0 16 16">
+                                          <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                                          <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                                          <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                                    </svg>
+                              </div>
+
+                              <div class="field input-field">
+                                <label>Confirm Password</label>
+                                <input type="password" placeholder="Password" name="confirm_password" class="password" required />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-slash eye-icon" viewBox="0 0 16 16">
+                                      <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                                      <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                                      <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                                </svg>
+                              </div>
+
+                              <div class="field button-field">
+                                     <button>Sign up</button>
+                              </div>
+                              </form>
+
+                              <div class="form-link">
+                                     <span>Already have account? <a href="{{url_for('login')}}" class="sign-up">Login</a>  </span>
+                              </div>
+                        </form>
+
+                </div>
+
+
+                </div>
+
+          </div>
+
+     </section>
+
+     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+*{
+    box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ .background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/farmer.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Blurs the background */
+     z-index: -1; /* Places the background behind other content */
+  } 
+
+ html,body{
+     overflow-x: hidden;
+     width: 100%;
+ }
+ .nav-bar {
+    display: flex;
+    justify-content: space-between; /* Space between heading and buttons */
+    align-items: center;
+    padding: 10px 20px;
+ }
+ 
+ .user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #d67a12;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    margin-left:10px;
+    z-index: 20;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #d17a17;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 30;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+ .main{
+     padding: 20px;
+     display: flex;
+     gap: 30px;  
+     overflow: hidden;
+ }
+ 
+ input[type="text"],
+ input[type="number"]
+ ,button{
+    box-sizing: border-box;
+ }
+ 
+ .main button{
+    border: none;
+    background:transparent;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transform: translateY(-5px); /* Moves up slightly instead of growing */
+     
+    
+  }
+ button:hover{
+     border-bottom:2px solid rgb(238, 233, 233);
+ }
+ 
+ h1{
+     color: rgb(84, 97, 10); 
+     justify-content: center;
+     font-size: 50px;
+ } 
+ 
+ .content{
+     display: flex;
+     flex-direction:column ;
+     align-items: flex-start;
+     position: relative;
+     left: 300px;
+ }
+ .content input{ 
+     width: 100%; /* Make all inputs the same width */
+     max-width: 600px; /* Set a max width to control size */
+     height: 40px;
+     padding: 8px;
+     border: 1px solid #0a0a0a;
+     border-radius: 4px;
+     box-sizing: border-box;  
+     background: transparent;
+ 
+ } 
+.content label{
+     color: rgb(243, 240, 245);
+     font-weight: bold;
+     font-size: 20px;
+     padding-top: 20px;
+     padding-bottom: 10px;
+ }
+ input::placeholder{
+     color: rgb(250, 244, 244);
+     font-size: 12px;
+ }
+ input{
+     color: rgb(248, 248, 252); 
+     font-size: 15px;
+     font-weight: bold;
+ } 
+ #submit{
+     width: max-content;
+     padding: 10px 25px 10px 25px;
+     border-radius: 12px;
+     cursor: pointer;
+     text-align: center;
+     position: relative;
+     left: 550px;
+     background: transparent; 
+     border: 1px solid rgb(6, 6, 7);
+     margin-top: 20px;
+     color: rgb(247, 242, 242);
+     font-size: medium;
+     z-index:   10;
+ }
+
+.history{
+    color:rgb(27, 51, 4)
+}
+ 
