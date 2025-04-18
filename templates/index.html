@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+<body>
+  <div class="background"></div>
+    <div class="overlay"></div>
+  <div class="nav-bar">
+        <div class="heading">
+         <h1>Crop Yield Prediction</h1></div>
+         <div class="main">
+          {% if session.get('email') %}
+              <!-- Display user icon -->
+              <a href="{{url_for('history_view')}}"> <button type="button" class="history">History</button></a>
+              <div class="user-icon" onclick="toggleDropDown()">
+                {{session['email'][0].upper() }}
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                  <a href="{{ url_for('logout') }}">Logout</a>
+              </div>
+          {% else %}
+              <!-- Display login and history buttons -->
+              <a href="{{url_for('history_view')}}"> <button type="button" class="history">History</button></a>
+              <a href="{{ url_for('login') }}"><button type="button" id="login">Log in</button></a>
+          {% endif %}
+      </div>
+    </div>
+    
+             <form action="/result" method="POST">
+              <div class="content">
+             <label>Region : </label>
+             <input type="text" name="region"  placeholder="Enter the region ( East , North , South , West)" required/> 
+             </div>
+
+             <div class="content">
+              <label>Soil Type : </label>
+              <input type="text" name="soil_type" placeholder="Enter the soil ( Chalky , Clay , Loam , Peaty , sandy , Silt)" required/>
+             </div>
+
+             <div class="content">
+              <label>Crop Type:</label> 
+              <input type="text"  name="crop" placeholder="Enter the crop ( Barley , Cotton , Maize , Rice , Soybean , Wheat )" required/>
+             </div>
+         
+             <div class="content">  <label>Rainfall :</label>
+              <input type="number" maxlength="3"  name="rainfall" placeholder="Enter the rainfall (mm)" required/></div>
+
+              <div class="content"> <label>Temperature : </label>
+                <input type="number" maxlength="3" name="temperature"  placeholder="Enter the temperature (°C)"required/></div>
+          
+              <button type="submit" id="submit">Submit</button>
+            </form> 
+        </div>
+      </div>
+
+      <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+
+</body>
+</html>

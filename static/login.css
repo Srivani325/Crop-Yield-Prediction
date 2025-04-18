@@ -1,0 +1,152 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Styling */
+.contain {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 360px;
+}
+
+/* Header Styling */
+header {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input Field Styling */
+.field {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s;
+  width: 100%;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Eye Icon Styling */
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.eye-icon:hover {
+  color: #555;
+}
+
+/* Button Styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Form Link Styling */
+.form-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+.form-link a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.form-link a:hover {
+  color: #388e3c;
+}
+
+/* Forgot Password Styling */
+.forgot-pass {
+  display: block;
+  margin-bottom: 15px;
+  text-align: right;
+  font-size: 14px;
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.forgot-pass:hover {
+  color: #388e3c;
+}
+
+/* Flash Message Styling */
+.flash-messages {
+  margin-bottom: 20px;
+}
+
+.flash {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #070707;
+  text-align: center;
+}
+
+.flash.success {
+  background-color: #4CAF50;
+}
+
+.flash.error {
+  background-color: #f44336;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .contain {
+    width: 100%;
+    padding: 20px;
+  }
+}

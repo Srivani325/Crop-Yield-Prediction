@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}" />
+</head>
+<body>
+    <div class="background"></div>
+  
+    <div class="container">
+    <h1>Prediction Result</h1>
+    <p><strong>Region:</strong> {{ region }}</p>
+    <p><strong>Soil Type:</strong> {{ soil }}</p>
+    <p><strong>Crop Type:</strong> {{ crop }}</p>
+    <p><strong>Rainfall:</strong> {{ rainfall }} mm</p>
+    <p><strong>Temperature:</strong> {{ temperature }} °C</p>
+    <h2>Predicted Yield: {{ result }} units/hectare</h2>
+
+    <a href="{{ url_for('home') }}">
+        <button>Back to Home</button>
+    </a>
+</div>
+
+</body>
+</html>
